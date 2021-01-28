@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 :root
 {
     --color1: #ffbe00;
@@ -12,15 +11,6 @@ body
 #nav
 {
     background-color: var(--color1);
-=======
-body {
-    padding: 0;
-    margin: 0;
-}
-
-#nav {
-    background-color: #ffbe00;
->>>>>>> 9ac3e136c5528393790c719dd3bbc9c401ea1ecb
     width: 100%;
     height: 70px;
     border-bottom: solid;
@@ -83,7 +73,6 @@ body {
 }
 
 
-<<<<<<< HEAD
 /*      Header       */
 #header
 {
@@ -128,8 +117,6 @@ body {
 
 
 
-=======
->>>>>>> 9ac3e136c5528393790c719dd3bbc9c401ea1ecb
 /* For mobile phones: */
 
 [class*="col-"] {
