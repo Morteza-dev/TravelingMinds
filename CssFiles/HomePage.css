@@ -18,9 +18,11 @@ body
     border-width: 1px;
     padding: 0;
     margin: 0;
+    position: sticky;
+    top: 0;
 }
-
-#navBar {
+#navBar 
+{
     box-sizing: border-box;
     list-style-type: none;
     font-family: Verdana, sans-serif;
@@ -82,7 +84,7 @@ body
     border-color: black;
     border-width: 1px;
     width: 100%;
-    height: 400px;
+    height: 380px;
     padding-top: 1%;
     padding-left: 5%;
 }
@@ -90,15 +92,16 @@ body
 {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 70px;
+    font-size: 65px;
     font-family: "Times New Roman", Times, serif;
     font-weight: 500;
     line-height: 1;
 }
 #header p
 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
+    margin-bottom: 40px;
 }
 #header p a
 {
@@ -109,7 +112,11 @@ body
     text-decoration: none;
     border-style: solid;
     border-color: black;
-    
+    border-radius: 7px;
+    border-width: 1px;
+    padding: 10px 23px 10px 23px;
+    font-size: 18px;
+    color: black;
 }
 
 
@@ -123,7 +130,7 @@ body
     width: 100%;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 720px) {
     /* For tablets: */
     .col-s-1 {
         width: 8.33%;
@@ -173,9 +180,14 @@ body
         visibility: visible;
         font-size: 13px;
     }
+    #header h1{
+        font-size: 68px;
+    }
+    #header p{
+        font-size: 20px;
+    }
 }
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 950px) {
     /* For desktop: */
     .col-1 {
         width: 8.33%;
@@ -224,5 +236,11 @@ body
     .visibility {
         visibility: visible;
         font-size: 13px;
+    }
+    #header h1{
+        font-size: 70px;
+    }
+    #header p{
+        font-size: 20px;
     }
 }
