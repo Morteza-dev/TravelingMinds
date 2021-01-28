@@ -141,10 +141,7 @@ body
 }
 #TrendTitle #img
 {
-    background-image: url(../Resources/trending.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    
     width: 30px;
     height: 30px;
     border-style: hidden;
@@ -227,6 +224,7 @@ body
 #posts
 {
     float: left;
+    overflow: auto;
 }
 #Btags
 {
@@ -278,6 +276,64 @@ body
     font-size: 15px;
     
 }
+
+.Grid2C
+{
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-gap: 3px;
+    padding: 70px 0 0 65px;
+}
+.TC
+{
+    display: grid;
+    grid-template-rows: auto auto auto auto ;
+    grid-gap: 3px;
+}
+.TC1
+{
+    clear: both;
+}
+.TC1 img
+{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-style: hidden;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.TC1 div
+{
+    padding-top: 7px;
+    font-weight: 500;
+    font-weight: 600;
+}
+.TC2
+{
+    font-size: 30px;
+    font-weight: 700;
+}
+.TC3
+{
+    font-size: 15px;
+    color: #3c3c3c;
+}
+.TC4 p
+{
+    float: left;
+    font-size: 14px;
+}
+.TC4 img
+{
+    float: right;
+}
+.PC
+{
+    height: auto;
+    width: 200px;
+}
+
 
 /* For mobile phones: */
 
