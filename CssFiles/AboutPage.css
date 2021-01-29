@@ -113,11 +113,13 @@ body
     box-sizing: border-box;
     padding: 2%;
     height: auto;
+    color: black;
 }
 #Texts1 p
 {
     font-size: 25px;
     font-weight: 500;
+    color: black;
 }
 #Animations1
 {
@@ -182,17 +184,416 @@ body
 {
     font-size: 20px;
     font-weight: 600;
+    color: black;
 }
 .items2 div p
 {
     align-self: center;
 }
 
+/* section 3 */
+
+#s3
+{
+    clear: both;
+    width: 100%;
+    height: 400px;
+}
+#Origin
+{
+    background-color: black;
+    height: 450px;
+    width: 100%;
+}
+#s3 #Texts3,#TPs3
+{
+    width: 50%;
+    background-color: black;
+    height: 100%;
+}
+#Texts3
+{
+    float: left;
+    border-right: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 2% 4% 2%  4%;
+    color: whitesmoke;
+    box-sizing: border-box;
+}
+#TPs3
+{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    padding: 4%;
+    box-sizing: border-box;
+
+}
+#TPs3 img
+{
+    width: 100px;
+    height: 100px;
+}
+#TPs3 div
+{
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* section 4 */
+
+#s4
+{
+    clear: both;
+    border-top: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+    background-color: black;
+    height: auto;
+    width: 100%;
+}
+
+#Os4
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color:whitesmoke;
+    align-items: center;
+    padding: 3% 15% 3% 15%;
+    box-sizing: border-box;
+}
+#Os4 h1
+{
+    font-size: 70px;
+    font-weight: 500;
+}
+#Os4 p
+{
+    margin-top: 0;
+    font-size: 20px;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+#Os4 a
+{
+    text-decoration: unset;
+    border-style: solid;
+    border-color: yellowgreen;
+    border-width: 1px;
+    color: yellowgreen;
+    background-color: black;
+    padding: 8px 17px 8px 17px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+#Os4 a:hover
+{
+    background-color: yellowgreen;
+    color: whitesmoke;
+    
+}
+
+/* section 4 */
 
 
+#s5
+{
+    clear: both;
+    border-top: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+    background-color:#1d7837;
+    height: auto;
+    width: 100%;
+}
+
+#Os5
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 3% 15% 3% 15%;
+    box-sizing: border-box;
+}
+#Os5 h1
+{
+    font-size: 74px;
+    font-weight: 600;
+    color: black;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+#Os5 p
+{
+    color:whitesmoke;
+    margin-top: 0;
+    font-size: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+#Os5 a
+{
+    text-decoration: unset;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+    color: whitesmoke;
+    padding: 8px 17px 8px 17px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+#Os5 a:hover
+{
+    background-color: whitesmoke;
+    color: black;
+    
+}
+/* section 6 */
+#s6
+{
+    width: 100%;
+    height: 600px;
+}
+#Os6
+{
+    width: 100%;
+    height: 100%;
+}
+#Ts6
+{
+    background-color: lightgreen;
+    width: 60%;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 2%;
+}
+#h
+{
+    height: 45%;
+    clear: both;
+    box-sizing: border-box;
+    font-size: 60px;
+}
+#h h1
+{
+    font-weight: 500;
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 0;
+}
+#p
+{
+    
+    clear: both;
+    height: 45%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+#p p
+{
+    font-size: 20px;
+    font-weight: 600;
+    padding-right: 40%;
+}
+#a a
+{
+    text-decoration: unset;
+    border-style: solid;
+    border-width: 1px;
+    color: whitesmoke;
+    padding: 8px 17px 8px 17px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+#iOS
+{
+    background-color: black;
+    border-color: black;
+}
+#Android
+{
+    background-color: green;
+    border-color: black;
+}
+#Ps6
+{
+    background-color: lightgreen;
+    width: 40%;
+    float: right;
+    box-sizing: border-box;
+}
+#Ps6 img
+{
+    padding-top: 50px;
+    height: 550px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 75%;
+}
+
+/* section 7 */
 
 
+#s7
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: 600px;
+    clear: both;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: black;
+}
+#hs7 , #gridCs7
+{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+#hs7
+{
+    border-right: solid;
+    border-width: 1px;
+    height: 100%;
+    padding: 0 7% 2% 3%;
+    font-size: 50px;
+    font-weight: 500;
+}
+.grids7
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    display: grid;
+    align-content: space-evenly;
+    padding: 0 0 0 2%;
+    margin: 0;
+}
+#line
+{
+    border-bottom: solid;
+    border-color: black;
+    border-width: 1px;
+}
+.item1s7
+{
+    padding-top: 0;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.item1s7 h1
+{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 0.5;
+}
+.item1s7 p
+{
+    padding-right: 30%;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 0;
+    padding-top: 0;
+}
+.grids7 a
+{
+    text-decoration: unset;
+    border-style: solid;
+    border-width: 1px;
+    color: green;
+    padding: 8px 17px 8px 17px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color:whitesmoke ;
+    border-color: green;
+    box-sizing: border-box;
+    width: 200px;
+}
+#line a
+{
+    width: 150px;
+}
+.grids7 a:hover
+{
+    background-color: green;
+    color: whitesmoke;
+}
+/* section 8 */
+#s8
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: 600px;
+    clear: both;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: black;
+}
+#As8 , #Ts8
+{
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 50px;
+}
+#As8
+{
+    float: left;
+}
+#Ts8
+{
+    float: right;
+    display: grid;
+    grid-column: auto;
+    align-content: space-evenly;
+    box-sizing: border-box;
+    height: 100%;
+    border-left: solid;
+    border-color: black;
+    border-width: 1px;
+}
+#Ts8 h1
+{
+    font-size: 80px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 200px;
+    line-height: 1;
+}
+#Ts8 a
+{
+    text-decoration: unset;
+    border-style: solid;
+    border-width: 1px;
+    color: whitesmoke;
+    padding: 8px 17px 8px 17px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color:green ;
+    border-color: green;
+    box-sizing: border-box;
+    width: 150px;
+}
 
+#Ts8 a:hover
+{
+    background-color:whitesmoke;
+    color: green;
+}
 
 
 
@@ -257,6 +658,19 @@ body
     {
         font-size: 60px;
     }
+    #Texts3
+    {
+        font-size: 42px;
+    }
+    #TPs3 img
+    {
+        width: 120px;
+        height: 120px;
+    }
+    #TPs3 div
+    {
+        font-size: 25px;
+    }
 }
 @media only screen and (min-width: 950px) {
     /* For desktop: */
@@ -315,5 +729,18 @@ body
     #grids2
     {
         grid-template-columns: auto auto auto;
+    }
+    #Texts3
+    {
+        font-size: 50px;
+    }
+    #TPs3 img
+    {
+        width: 150px;
+        height: 150px;
+    }
+    #TPs3 div
+    {
+        font-size: 30px;
     }
 }
