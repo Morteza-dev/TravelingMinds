@@ -216,14 +216,20 @@ body
 {
     position: sticky;
     top: 70px;
+    height: auto;
 }
 #links
 {
-    float: right;
+    float:right;
+    position: sticky;
+    top: 70px;
+    right: 0;
+
 }
 #posts
 {
     float: left;
+    height: 100%;
     overflow: auto;
 }
 #Btags
