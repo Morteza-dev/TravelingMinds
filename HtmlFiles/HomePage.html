@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traveling Mindes</title>
     <link rel="stylesheet" href="../CssFiles/HomePage.css">
+    <link rel="stylesheet" href="../CssFiles/LoginSignin.css">
 </head>
 <body>
     <!--AddComment-->
@@ -13,10 +14,10 @@
     <div id="nav">
         <ul id="navBar">
             <li class="nav-li"><a id="GetStart" href="#">Get Started</a></li>
-            <li id="signin" class="nav-li">Sign In</li>
-            <li class="nav-li visibility">Write</li>
-            <li class="nav-li visibility">Membership</li>
-            <li class="nav-li visibility">Our Story</li>
+            <li id="signin" class="nav-li" onclick="ShowSignin()"><a href="#">Sign In</a></li>
+            <li class="nav-li visibility"><a href="#">Write</a></li>
+            <li class="nav-li visibility"><a href="#">Membership</a></li>
+            <li class="nav-li visibility"><a href="#">Story</a></li>
             <li id="Logo"><img src="../Resources/Medium-logo-2020-symbol.png"></li>
         </ul>
     </div>
@@ -257,5 +258,24 @@
             </div>
         <!--</section>-->
         <!--/Main-->
+        <!--Overlay-->
+            <div id="SigninPage">
+                <div class="sidePart" onclick="HideForm()"> </div>
+                <div id="Form" >
+                    <div id="div">
+                        <div id="wellcome">Wellcome back</div>
+                        <form>
+                            <input class="input" type="text" id="username" name="username" placeholder="Your Username ..." autofocus></br>
+                            <div id="password"><input class="input" type="password" id="pass" name="pass" placeholder="Password ...">
+                                <a href="#" id="hideshow"><img id="imgHS" src="../Resources/icons8-eye-24.png" alt="Show Password" onclick="showhide()"></a>
+                            </div></br>
+                            <input type="submit" id="btnsubmit" value="Signin">
+                        </form>
+                        <div id="Create"><div>No account?<a href="#">Create one</a></div></div>
+                    </div>
+                </div>
+                <div class="sidePart" onclick="HideForm()"></div>
+            </div>
 </body>
+<script src="../JsFiles/HomePage.js"></script>
 </html>

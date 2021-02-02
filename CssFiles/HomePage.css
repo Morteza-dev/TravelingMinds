@@ -40,6 +40,11 @@ body
     margin-top: 23px;
     margin-right: 20px;
 }
+.nav-li a
+{
+    text-decoration: none;
+    color: black;
+}
 
 #Logo {
     float: left;
@@ -214,8 +219,7 @@ body
 /* Section 2 */
 #s2
 {
-    position: sticky;
-    top: 70px;
+    position: unset;
     height: auto;
 }
 #links
@@ -229,8 +233,9 @@ body
 #posts
 {
     float: left;
+    position: unset;
     height: 100%;
-    overflow: auto;
+    
 }
 #Btags
 {
