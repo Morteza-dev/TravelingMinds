@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CssFiles/WriteStory.css">
+</head>
+<body>
+    <div id="Origin">
+        <div id="Toolbar">
+            <button id="btnHome">Home</button>
+            <button onclick="HideShowSidebar(this)" id="btnSide">Hide/Show SideBar</button>
+            <button id="btnDraft">Draft</button>
+            <button id="btnPublish">Publish</button>
+        </div>
+        <div id="note">
+            <input type="text" id="header" placeholder="Title">
+
+
+
+            <div id="imgM">
+                <div id="dropDown">
+                    <div id="type"><a href="#">Choose</a></div>
+                    <ul>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">file</a></li>
+                    </ul>
+                </div>
+                <input type="text" id="mainImg" placeholder="Image" >
+            </div>
+
+               <!-- <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="Layout1 div">
+                    <div class="close"></div>
+                </div>
+                <div class="Layout2 div">
+                    <div class="close"></div>
+
+                </div>
+                <div class="Layout3 div">
+                    <div class="close"></div>
+
+                </div> 
+            -->
+
+
+            <div id="End"> . . . </div>
+        </div>
+      <!--  <p id="para">Test</p>-->
+
+
+
+<!--             Side                 -->
+
+
+        <div id="side">
+            <div class="Tool">
+               <div class="headerTool">Layout</div>
+
+               <div class="Tools">
+                    <div class="item1"><a href="#"><img draggable="false" onclick="CreateElment('Layout1')" src="../Resources/icons8-dashboard-layout-48.png" alt="tool" title="Layout Small"></a></div>
+                    <div class="item2"><a href="#"><img draggable="false" onclick="CreateElment('Layout2')" src="../Resources/icons8-dashboard-layout-48.png" alt="tool"title="Layout"></a></div>
+                    <div class="item3"><a href="#"><img draggable="false" onclick="CreateElment('Layout3')" src="../Resources/icons8-dashboard-layout-48.png" alt="tool" title="Layout Large"></a></div>
+               </div>
+
+            </div>
+
+
+
+
+            <div class="Tool">
+                <div class="headerTool">Camera</div>
+ 
+                <div class="Tools">
+                     <div class="item1"><a href="#"><img id="Test" draggable="true" ondragstart="drag(event,'camera','size1')" src="../Resources/icons8-camera-50.png" alt="tool" title="Layout Small"></a></div>
+                     <div class="item2"><a href="#"><img draggable="true" ondragstart="drag(event,'camera','size2')" src="../Resources/icons8-camera-50.png" alt="tool"title="Layout"></a></div>
+                     <div class="item3"><a href="#"><img draggable="true" ondragstart="drag(event,'camera','size3')" src="../Resources/icons8-camera-50.png" alt="tool" title="Layout Large"></a></div>
+                </div>
+ 
+            </div>
+
+
+            <div class="Tool">
+                <div class="headerTool">Text</div>
+ 
+                <div class="Tools">
+                     <div class="item1"><a href="#"><img draggable="true" ondragstart="drag(event,'textarea','size1')" class="small TextArea" src="../Resources/icons8-text-48.png" alt="tool" title="Layout Small"></a></div>
+                     <div class="item2"><a href="#"><img draggable="true" ondragstart="drag(event,'textarea','size2')" src="../Resources/icons8-text-48.png" alt="tool"title="Layout"></a></div>
+                     <div class="item3"><a href="#"><img draggable="true" ondragstart="drag(event,'textarea','size3')"src="../Resources/icons8-text-48.png" alt="tool" title="Layout Large"></a></div>
+                </div>
+ 
+            </div>
+
+
+
+
+
+            <div class="Tool">
+                <div class="headerTool">Picture</div>
+ 
+                <div class="Tools">
+                     <div class="item1"><a href="#"><img  draggable="true" ondragstart="drag(event,'pic','size1')"  src="../Resources/icons8-image-64.png" alt="tool" title="Layout Small"></a></div>
+                     <div class="item2"><a href="#"><img  draggable="true" ondragstart="drag(event,'pic','size2')" src="../Resources/icons8-image-64.png" alt="tool"title="Layout"></a></div>
+                     <div class="item3"><a href="#"><img  draggable="true" ondragstart="drag(event,'pic','size3')"src="../Resources/icons8-image-64.png" alt="tool" title="Layout Large"></a></div>
+                </div>
+ 
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+<script src="../JsFiles/WriteStory.js"></script>
+</html>

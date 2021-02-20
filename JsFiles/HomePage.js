@@ -4,7 +4,6 @@ function ShowSignin()
     body[0].style.overflowY='hidden';
     var page=document.getElementById('SigninPage');
     page.style.visibility='visible';
-    page.style.overflow='auto';
 
 }
 function HideForm()

@@ -18,8 +18,10 @@ body
     border-width: 1px;
     padding: 0;
     margin: 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    right: 0;
+    left: 0;
 }
 #navBar 
 {
@@ -81,6 +83,10 @@ body
 
 
 /*      Header       */
+header
+{
+    padding-top: 70px;
+}
 #header
 {
     box-sizing: border-box;
@@ -225,17 +231,15 @@ body
 #links
 {
     float:right;
-    position: sticky;
-    top: 70px;
-    right: 0;
-
+    border-bottom: solid;
+    border-color: teal;
+    border-width: 1px;
 }
 #posts
 {
     float: left;
     position: unset;
     height: 100%;
-    
 }
 #Btags
 {
@@ -247,12 +251,64 @@ body
     font-weight: 600;
     font-size: 13px;
 }
-#TagsSubject
+#gridC
+{
+   width: 100%;
+   height: auto;
+   border-bottom: solid;
+   border-width: 1px;
+   border-color: teal;
+   padding-bottom: 4px;
+}
+.tagSubject
+{
+    box-sizing: border-box;
+    padding: 5px 10px 5px 10px;
+    color: #787878;
+    border-color: #DCDCDC;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 2px;
+}
+#see
+{
+    clear: both;
+    color: yellowgreen;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    margin-top: 7px;
+}
+#Tags
+{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+.tag
+{
+    text-decoration: none;
+    color: #787878;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 17px;
+    font-weight: 500;
+    
+}
+
+/*#TagsSubject
 {
     padding:3% 10% 3% 0;
     border-bottom: solid;
     border-width: 1px;
     border-color: #b4b4b4;
+}
+#TagsSubject ul
+{
+    list-style: none;
 }
 .tagSubject
 {
@@ -260,14 +316,18 @@ body
     text-decoration: none;
     padding: 5px 10px 5px 10px;
     color: #787878;
-    border-color: #787878;
+    border-color: #DCDCDC;
     border-style: solid;
     border-width: 1px;
     border-radius: 7px;
-    line-height: 2.5;
+    font-size: 14px;
+    float: left;
+    display: block;
 }
 #see
 {
+    clear: both;
+    float: left;
     color: yellowgreen;
     font-size: 15px;
     text-decoration: none;
@@ -286,7 +346,7 @@ body
     padding: 3px 10px 3px 10px;
     font-size: 15px;
     
-}
+}*/
 
 .Grid2C
 {
@@ -411,6 +471,12 @@ body
     #TrendigGrid{
         grid-template-columns: auto auto ;
     }
+    #links
+    {
+        border-bottom: solid;
+        border-color: teal;
+        border-width: 1px;
+    }
 }
 @media only screen and (min-width: 950px) {
     /* For desktop: */
@@ -470,5 +536,9 @@ body
     }
     #TrendigGrid{
         grid-template-columns: auto auto auto;
+    }
+    #links
+    {
+        border-bottom: none;
     }
 }
