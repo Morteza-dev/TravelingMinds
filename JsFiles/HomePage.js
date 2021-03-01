@@ -132,6 +132,7 @@ function change(elm)
         btn.onclick=function(){rqstLoginSignin('users/login/?$');}       
     }
 }
+//hamed
 function rqstLoginSignin(Url)
 {
     debugger;
