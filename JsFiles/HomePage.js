@@ -3,7 +3,7 @@
 const key = 'TravelingMinds';
 const keydata = 'dataTransfer';
 var rqst=new XMLHttpRequest();
-var url='/api/';
+var url='http://127.0.0.1:8000/api/';
 var WY = document.getElementById('body').scrollHeight-document.getElementById('body').clientHeight;
 var Tags=[];
 var interval;
@@ -88,8 +88,6 @@ function settings(condition)
 {
     if(condition)
     {
-        var data=JSON.parse(localStorage.getItem(key));
-        document.getElementById('UserN').innerText=data.username;
         var write=document.getElementById('write').setAttribute("href", "../HtmlFiles/WriteStory.html");
         var profile=document.getElementById('profile').style.display='block';
         var signin=document.getElementById('signin').style.display='none';
@@ -141,9 +139,7 @@ function rqstLoginSignin(Url)
     var Pass=document.getElementById('pass').value;
     alert(url+Url);
     rqst.open("Post", url+Url, true);
-    rqst.send('username='+UserName+'&'+'password='+Pass);
-    var rspns= rqst.response;
-    alert(rqst.status);
+    var rspns=rqst.send('username='+UserName+'&'+'password='+Pass);
     if(rspns==true)
     {
         var Jsondata={username:UserName , pass:Pass };
