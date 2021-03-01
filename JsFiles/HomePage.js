@@ -88,6 +88,8 @@ function settings(condition)
 {
     if(condition)
     {
+        var data=JSON.parse(localStorage.getItem(key));
+        document.getElementById('UserN').innerText=data.username;
         var write=document.getElementById('write').setAttribute("href", "../HtmlFiles/WriteStory.html");
         var profile=document.getElementById('profile').style.display='block';
         var signin=document.getElementById('signin').style.display='none';
@@ -137,8 +139,11 @@ function rqstLoginSignin(Url)
     debugger;
     var UserName=document.getElementById('username').value;
     var Pass=document.getElementById('pass').value;
+    alert(url+Url);
     rqst.open("Post", url+Url, true);
-    var rspns=rqst.send('username='+UserName+'&'+'password='+Pass);
+    rqst.send('username='+UserName+'&'+'password='+Pass);
+    var rspns= rqst.response;
+    alert(rqst.status);
     if(rspns==true)
     {
         var Jsondata={username:UserName , pass:Pass };
