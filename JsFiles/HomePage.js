@@ -134,6 +134,7 @@ function change(elm)
 }
 function rqstLoginSignin(Url)
 {
+    debugger;
     var UserName=document.getElementById('username').value;
     var Pass=document.getElementById('pass').value;
     rqst.open("Post", url+Url, true);
