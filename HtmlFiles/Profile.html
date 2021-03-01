@@ -4,28 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CssFiles/Profile.css">
+    <link rel="stylesheet" href="../CssFiles/LoginSignin.css">
 </head>
-<body id="body" onscroll="Refresh()">
+<body id="body" onscroll="Refresh()" onload="isLogin()">
 
 
     <!--Side-->
 
     <div id="Side">
-        <img id="profilePic" src="../Resources/images.jfif" alt="Profile Pic">
-        <div id="UserName">PORTFOLIO</div>
+        <img id="profilePic" src="../Resources/images.jfif" alt="Profile Pic" onclick="ChooseImg()">
+        <input type="file" id="uimg">
+        <div id="UserNameSide">UserName</div>
+        <input type="text" placeholder="UserName" id="UserNameinpt">
+
+
+        <!--           Bio            -->
+
+
+        <textarea id="EBio" class="bio" placeholder="Bio ..." maxlength="200"></textarea>
+        <div id="SBio" class="bio"></div>
+
+
+
+
+
         <div id="Bookmark">
-            <a href="#">
-                <div class="item">
-                    <img class="imgBookmark" src="../Resources/icons8-popular-40.png" alt="icon">
-                    <div class="textBookmark">Popular</div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="item">
-                    <img class="imgBookmark" src="../Resources/icons8-new-40.png" alt="icon">
-                    <div class="textBookmark">Latest</div>
-                </div>
-            </a>
+            <ul>
+                <li id="btnWriteStorty"><button>WriteStorty</button></li>
+                <li id="btnFolow"><button>Follow</button></li>
+                <li id="btnHome"><a href="../HtmlFiles/HomePage.html">Home</a></li>
+                <li id="btnEdit"><button>Edit</button></li>
+            </ul>
         </div>
     </div>
 
@@ -47,7 +56,7 @@
            <div id="suggestion">
             <h1 class="TitleS">Title</h1>
             <div class="list">
-                <div id="LB" class="btn" onclick="TtoL(this)">
+                <div id="LB" class="btn LB" onclick="TtoL(this)">
                     <img src="../Resources/icons8-chevron-left-26.png" alt="lB">
                 </div>
 
@@ -112,7 +121,7 @@
                     
                     
                 </div>
-                <div id="RB" class="btn" onclick="TtoR(this)">
+                <div id="RB" class="btn RB" onclick="TtoR(this)">
                     <img src="..//Resources/icons8-chevron-right-26.png" alt="rB">
                 </div>
 
@@ -207,7 +216,7 @@
                         </div>
                         <div id="footer">
                             <img src="..//Resources/icons8-expand-arrow-80.png" alt="expand">
-                            <a href="#">More</a>
+                            <a href="#" onclick="More(this)">More</a>
                         </div>
                     </div>
 
@@ -248,6 +257,10 @@
                                     <div class="UsernameF">Will Locket</div>
                                 </div>
                             </div>
+                            <div id="footer">
+                                <img src="..//Resources/icons8-expand-arrow-80.png" alt="expand">
+                                <a href="#" onclick="More('Follower')">More</a>
+                            </div>
                         </div>
                     <!--    Following           -->
                     <div id="Following" class="same">
@@ -285,10 +298,43 @@
                                 <div class="UsernameF">Will Locket</div>
                             </div>
                         </div>
+                        <div id="footer">
+                            <img src="..//Resources/icons8-expand-arrow-80.png" alt="expand">
+                            <a href="#" onclick="More('Following')">More</a>
+                        </div>
                     </div>
 
                    
 
+        </div>
+
+
+
+
+         <!--Overlay-->
+         <div id="SigninPage">
+            <div class="sidePart" onclick="HideForm()"> </div>
+            <div id="Form" >
+                <div id="div">
+                    <div id="wellcome">Wellcome back
+                        
+                    </div>
+                    <form>
+                        <input class="input" type="text" id="username" name="username" placeholder="Your Username ..." autofocus></br>
+                        <div id="password"><input class="input" type="password" id="pass" name="pass" placeholder="Password ...">
+                            <a href="#" id="hideshow"><img id="imgHS" src="../Resources/icons8-eye-24.png" alt="Show Password" onclick="showhide()"></a>
+                        </div></br>
+                        <div id="msg">
+                            <div>Username or password is incorrect</div>
+                            <img src="../Resources/icons8-box-important-100.png" alt="error">
+                        </div>
+                    </br>
+                        <input type="submit" id="btnsubmit" value="Signin">
+                    </form>
+                    <div id="Create"><div>No account?<button href="#">Create one</button></div></div>
+                </div>
+            </div>
+            <div class="sidePart" onclick="HideForm()"></div>
         </div>
         
     </div>

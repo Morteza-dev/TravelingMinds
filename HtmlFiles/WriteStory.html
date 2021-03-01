@@ -8,10 +8,10 @@
 <body>
     <div id="Origin">
         <div id="Toolbar">
-            <button id="btnHome">Home</button>
+            <button id="btnHome"><a href="../HtmlFiles/HomePage.html">Home</a></button>
             <button onclick="HideShowSidebar(this)" id="btnSide">Hide/Show SideBar</button>
             <button id="btnDraft">Draft</button>
-            <button id="btnPublish">Publish</button>
+            <button onclick="Publish()" id="btnPublish">Publish</button>
         </div>
         <div id="note">
             <input type="text" id="header" placeholder="Title">
@@ -113,6 +113,8 @@
 
         </div>
     </div>
+
+
 </body>
 <script src="../JsFiles/WriteStory.js"></script>
 </html>

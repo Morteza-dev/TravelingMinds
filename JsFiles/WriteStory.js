@@ -1,3 +1,4 @@
+const key = 'TravelingMinds';
 var LastElm=document.getElementById('End');
 var RefElm=document.getElementById('note');
 //var idE=['0','1','2','3','4','5','6','7','8'];
@@ -46,8 +47,11 @@ function CreateElment(className)
             {
                 case 'textarea':
                     {
+                        debugger;
                         var NewItem=document.createElement(dataJson.type);
                         NewItem.className=dataJson.type+" "+dataJson.size;
+                        setMaxLength(RefElm,NewItem,dataJson.size);
+                        console.log(NewItem.maxlength);
                         //NewItem.appendChild(Childe);
                         RefElm.appendChild(NewItem);
                         NewItem.ondblclick=function(){RemoveThis(this);}
@@ -97,12 +101,15 @@ function CreateElment(className)
                         inpt.placeholder='Link ...';
                         inpt.onchange=function()
                         {
-                            var img=document.createElement('img');
-                            img.className='imglink';
-                            NewItem.insertBefore(img,inpt);
-                            img.src=inpt.value;
-                            inpt.style.display='none';
-                            img.ondblclick=function(){RemoveThis(this);}
+                            if(ExtensionValidator(inpt.value))
+                            {
+                                var img=document.createElement('img');
+                                img.className='imglink';
+                                NewItem.insertBefore(img,inpt);
+                                img.src=inpt.value;
+                                inpt.style.display='none';
+                                img.ondblclick=function(){RemoveThis(this); inpt.style.display='block'; inpt.value='';  }
+                            }
                         }
                         NewItem.appendChild(inpt);
                        // NewItem.insertBefore(inpt,Childe);
@@ -260,5 +267,116 @@ function HideShowSidebar(elm)
     {
         document.getElementById('side').style.display='none';
         document.getElementById('note').style.width='100%';
+    }
+}
+function setMaxLength(RE,elm,size)
+{
+    var x = RE.className;
+    console.log(x);
+    switch(x)
+    {
+        case 'Layout1 div':
+            {
+                if(size==='size2')
+                {
+                    elm.setAttribute("maxlength", "352");
+                }
+                if(size==='size1')
+                {
+                    elm.setAttribute("maxlength", "176");
+                }
+                
+                break;
+            }
+        case 'Layout2 div':
+            {
+                if(size==='size2')
+                {
+                    elm.setAttribute("maxlength", "528");
+                }
+                if(size==='size1')
+                {
+                    elm.setAttribute("maxlength", "264");
+                }
+                break;
+            }
+    }
+}
+function ExtensionValidator(link)
+{
+    debugger;  
+       // var array = ['jpg', 'jpeg', 'gif', 'png', 'tif', 'tiff'];  
+      //  var Extension = link.substring(link.lastIndexOf('.')+1 ).toLowerCase();  
+      //  var test=array.indexOf(Extension)
+      //  var t='jpg?size=626&ext=jpg';
+      //  if (Extension.indexOf(t) <= -1) 
+     //   {  
+    //        alert("Please Upload only jpg , jepg , gif , png , tif and tiff extension flle");  
+     //       return false;  
+     //   }  
+      //  else
+      //      return true;
+
+    var array = ['jpg', 'jpeg', 'gif', 'png', 'tif', 'tiff'];  
+    var Extension = link.substring(link.lastIndexOf('.')+1 ).toLowerCase();
+    for(var i=0; i<array.length ; i++)
+    {
+        if(Extension.includes(array[i])===true)
+        {
+            return true;
+        }
+        else
+        {
+            alert("Please Upload only jpg , jepg , gif , png , tif and tiff extension flle");
+            return false;
+        }
+    }
+}
+function Publish()
+{
+    var parent = document.getElementById('note');
+    var Container= parent.querySelectorAll(".div");
+    var ListContainer=[];
+    var ListValue=[];
+    for(var i=0; i<Container.length; i++)
+    {
+        var CI={
+            CN:Container[i].className,
+            CU:Container[i].children.length-1
+        }
+        ListContainer.push(CI);
+        for(var j=1; j<Container[i].children.length ; j++)
+        {
+            var Temp=Container[i].children;
+            var elm={
+                CN:Temp[j].className,
+                CV:ValueOfCn(Temp[j])
+            }
+            ListValue.push(elm);
+        }
+    }
+    var Data={
+        title:document.getElementById('header').value,
+        src:document.getElementById('mainImg').src,
+        parent:ListContainer,
+        childs:ListValue
+    };
+    var Description=JSON.stringify(Data);
+    debugger;
+    console.log(Data);
+    console.log(Description);
+
+    //send
+}
+function ValueOfCn(elm)
+{
+    if(elm.className.includes('pic'))
+    {
+        var Tmp=elm.getElementsByTagName('img');
+        return Tmp[0].src;
+    }
+    else
+    {
+        return elm.value;
     }
 }

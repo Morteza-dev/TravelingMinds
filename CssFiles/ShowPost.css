@@ -17,26 +17,41 @@ a
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     height: 100px;
     padding-top: 0;
     margin-top: 0;
+    position: relative;
+    
+}
+#green 
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 39%;
+    background-color: #7FFFD4;
+    z-index: -1;
 }
 #logo
 {
     box-sizing: border-box;
     width: 250px;
+    box-sizing: border-box;
 }
 #logo img
 {
     box-sizing: border-box;
-    width: 100%;
+    width: 250px;
     height: 100%;
 }
+
 #list
 {
     width: 200px;
     height: 100%;
-    box-sizing: border-box;
 }
 #list *
 {
@@ -45,6 +60,7 @@ a
 }
 #list ul
 {
+    width:100%;
     list-style: none;
     height: 100%;
 }
@@ -53,11 +69,12 @@ a
     float: left;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-right: 5px;
+    align-items: center;
 }
-#list #Test
+#ul #Test
 {
     display: none;
 }
@@ -66,6 +83,7 @@ a
     box-sizing: border-box;
     width: 30px;
     height: 30px;
+
 }
 .iconnav
 {
@@ -87,11 +105,15 @@ a
     border-width: 1px;
     border-color: black;
     font-size: 15px;
-    color: black;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 }
-#list button
+#Test a
+{
+    color: black;
+}
+#ul button
 {
     box-sizing: border-box;
     width: 80px;
@@ -101,11 +123,96 @@ a
     border-width: 1px;
     border-color: black;
     font-size: 15px;
-    color: black;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+#ul #prfle
+{
+    position: relative;
+}
+#prfle img
+{
+    width: 35px;
+    height: 35px;
+    display: none;
+}
+#prfle .tooltiptext 
+{
+    display: none;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 50%;
+    margin-left: -60px;
+}
+#prfle:hover .tooltiptext
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#prfle .tooltiptext::after 
+{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;  
+}
+.tooltiptext div
+{
+    text-decoration: none;
+    color: aqua;
+    border-style: none;
+    outline: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.tooltiptext a
+{
+    text-decoration: none;
+    color: aqua;
+    border-style: none;
+    outline: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.tooltiptext button
+{
+    text-decoration: none;
+    color: aqua;
+    border-style: none;
+    outline: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: transparent;
 }
+.tooltiptext div:hover
+{
+    color: lightpink;
+}
+.tooltiptext a:hover
+{
+    color: lightpink;
+}
+.tooltiptext button:hover
+{
+    color: lightpink;
+}
+ 
 /* Line */
 #Line
 {
@@ -114,7 +221,7 @@ a
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-color: #7FFFD4;
 }
 /* Show Post */
 
@@ -276,6 +383,9 @@ a
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 1px;
 }
 #Like img
 {
@@ -286,6 +396,120 @@ a
 {
     font-size: 20px;
 }
+
+
+/*     Comments             */
+
+
+#Comments
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+}
+#FakeComment
+{
+    width: 10%;
+    height: 100vh;
+    box-sizing: border-box;
+    float: left;
+}
+#ShowComents
+{
+    width: 80%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: -0px 0 5px 0 gray;
+    background-color: whitesmoke;
+    float: right;
+    box-sizing: border-box;
+}
+.Card
+{
+    width: 100%;
+    height: auto;
+    margin-top: 7px;
+}
+.Info
+{
+    display:  flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding-left: 5px;
+}
+.Info img
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px 0 black;
+}
+.Info a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.TextComment
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    box-shadow: 0 0 3px 0 teal inset;
+    margin-top: 5px;
+    padding: 5px;
+    color:gray;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+#WriteComment
+{
+    width: 100%;
+    height: auto;
+}
+#WComment
+{
+    margin-top: 5px;
+    width: 100%;
+    height: 350px;
+    resize: none;
+}
+#WriteComment button
+{
+    margin-top: 5px;
+    padding: 7px 15px 7px 15px;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 7px;
+}
+#WriteComment button:hover
+{
+    color: green;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: green;
+}
+#WriteComment button:active
+{
+    outline: none;
+    border-style: none;
+}
+
+
+
 
 /*      Responsiv           */
 
@@ -308,7 +532,20 @@ a
     {
         font-size: 50px;
     }
+    #ShowComents
+    {
+        width: 50%;
+    }
+    #FakeComment
+    {
+        width: 50%;
+    }
+    #list
+    {
+        width: 250px;
+    }
 }
+
 @media only screen and (min-width: 950px) {
     /* For desktop: */
     #fake
@@ -331,5 +568,13 @@ a
     #list #Test
     {
         display: flex;
+    }
+    #ShowComents
+    {
+        width: 30%;
+    }
+    #FakeComment
+    {
+        width: 70%;
     }
 }

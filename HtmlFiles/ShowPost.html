@@ -5,20 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CssFiles/ShowPost.css">
+    <link rel="stylesheet" href="../CssFiles/LoginSignin.css">
+    <link rel="stylesheet" href="../CssFiles/MainPost.css">
+
 </head>
-<body>
+<body onload="isLogin()">
     <div id="Origin">
 
 
         <div id="nav">
-            <div id="logo"><img src="../Resources/Untitled-2.jpg" alt="logo"></div>
+            <div id="green"></div>
+            <div id="logo"><img src="../Resources/Untitled-2.png" alt="logo"></div>
 
             <div id="list">
-                <ul>
+                <ul id="ul">
                     <li><img class="iconnav" src="../Resources/icons8-bookmark-24.png" alt="bookmark"></li>
-                    <li><img class="iconnav" src="../Resources/icons8-add-reminder-64.png" alt="remaind"></li>
+                    <li><img id="sbscrb" class="iconnav" src="../Resources/icons8-add-reminder-64.png" alt="remaind"></li>
                     <li id="Test"><a href="#"><span>Upgrade</span></a></li>
-                    <li><button>Signin</button></li>
+                    <li id="signin"><button onclick="ShowSignin()">Signin</button></li>
+                    <li id="prfle"><img src="../Resources/User.png" alt="picProfile">
+                        <span class="tooltiptext">
+                            <div id="usernameTooltip">Morteza</div>
+                            <a href="../HtmlFiles/Profile.html">Profile</a>
+                            <button>Logout</button>
+                        </span>
+                    </li>
+
+
+
                 </ul>
             </div>
         </div>
@@ -37,7 +51,7 @@
 
 
                 <div id="header">
-                    <h1>Modularization of Android Applications in 2021</h1>
+                    <h1 id="titlePost">Modularization of Android Applications in 2021</h1>
                 </div>
 
                 <div id="profile">
@@ -45,7 +59,7 @@
                     <img id="imgProfile" src="../Resources/1_GVYwwMwoxko446IXnqe3fA.jpeg" alt="pic">
                     <div id="infProfile">
                         <div id="UB">
-                            <a href="#">Andrey Beryukhov</a>
+                            <a id="author" href="#" onclick="visit(this)">Andrey Beryukhov</a>
                             <button>Follow</button>
                         </div>
                     </div>
@@ -79,7 +93,92 @@
 
                 <div id="Like">
                     <img src="../Resources/icons8-applause-32.png" alt="pic">
-                    <div>891</div>
+                    <img onclick="ShowComment()" src="../Resources/icons8-topic-50.png" alt="pic">
+                </div>
+
+                <div id="Comments">
+                    <div id="FakeComment" onclick="HideComment()"></div>
+                    <div id="ShowComents">
+
+                        <div class="Card">
+                            <div class="Info">
+                                <img src="../Resources/1_8xTTSOoGam3LNJGafZoPgQ.jpeg" alt="profilepic">
+                                <a href="#">Lewis Donovan<a>
+                            </div>
+                            <div class="TextComment">
+                                Sometimes a single feature can be split into modules by abstraction layer (data, domain, etc.)
+
+                                I wouldn't do this to be honest. Following your repo example, have you had a `User` model you would've placed it inside `profile_api` (because user isn't…...
+                            </div>
+                        </div>
+
+
+
+                        <div class="Card">
+                            <div class="Info">
+                                <img src="../Resources/1_8xTTSOoGam3LNJGafZoPgQ.jpeg" alt="profilepic">
+                                <a href="#">Lewis Donovan<a>
+                            </div>
+                            <div class="TextComment">
+                                Sometimes a single feature can be split into modules by abstraction layer (data, domain, etc.)
+
+                                I wouldn't do this to be honest. Following your repo example, have you had a `User` model you would've placed it inside `profile_api` (because user isn't…...
+                            </div>
+                        </div>
+
+
+
+                        <div class="Card">
+                            <div class="Info">
+                                <img src="../Resources/1_8xTTSOoGam3LNJGafZoPgQ.jpeg" alt="profilepic">
+                                <a href="#">Lewis Donovan<a>
+                            </div>
+                            <div class="TextComment">
+                                Sometimes a single feature can be split into modules by abstraction layer (data, domain, etc.)
+
+                                I wouldn't do this to be honest. Following your repo example, have you had a `User` model you would've placed it inside `profile_api` (because user isn't…...
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="Card">
+                            <div class="Info">
+                                <img src="../Resources/1_8xTTSOoGam3LNJGafZoPgQ.jpeg" alt="profilepic">
+                                <a href="#">Lewis Donovan<a>
+                            </div>
+                            <div class="TextComment">
+                                Sometimes a single feature can be split into modules by abstraction layer (data, domain, etc.)
+
+                                I wouldn't do this to be honest. Following your repo example, have you had a `User` model you would've placed it inside `profile_api` (because user isn't…...
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="Card">
+                            <div class="Info">
+                                <img src="../Resources/1_8xTTSOoGam3LNJGafZoPgQ.jpeg" alt="profilepic">
+                                <a href="#">Lewis Donovan<a>
+                            </div>
+                            <div class="TextComment">
+                                Sometimes a single feature can be split into modules by abstraction layer (data, domain, etc.)
+
+                                I wouldn't do this to be honest. Following your repo example, have you had a `User` model you would've placed it inside `profile_api` (because user isn't…...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <div id="WriteComment">
+                    <textarea placeholder="Your Comment ..." id="WComment" ></textarea>
+                    <button>Send</button>
                 </div>
 
 
@@ -90,6 +189,35 @@
         </div>
 
 
+         <!--Overlay-->
+         <div id="SigninPage">
+            <div class="sidePart" onclick="HideForm()"> </div>
+            <div id="Form" >
+                <div id="div">
+                    <div id="wellcome">Wellcome back
+                        
+                    </div>
+                    <form>
+                        <input class="input" type="text" id="username" name="username" placeholder="Your Username ..." autofocus></br>
+                        <div id="password"><input class="input" type="password" id="pass" name="pass" placeholder="Password ...">
+                            <a href="#" id="hideshow"><img id="imgHS" src="../Resources/icons8-eye-24.png" alt="Show Password" onclick="showhide()"></a>
+                        </div></br>
+                        <div id="msg">
+                            <div>Username or password is incorrect</div>
+                            <img src="../Resources/icons8-box-important-100.png" alt="error">
+                        </div>
+                    </br>
+                        <input type="submit" id="btnsubmit" value="Signin">
+                    </form>
+                    <div id="Create"><div>No account?<a id="CreateLogin" onclick="change(this)" href="#">Create one</a></div></div>
+                </div>
+            </div>
+            <div class="sidePart" onclick="HideForm()"></div>
+        </div>
+
+
     </div>
+    
 </body>
+<script src="../JsFiles/ShowPost.js"></script>
 </html>

@@ -6,21 +6,31 @@
     <link rel="stylesheet" href="../CssFiles/HomePage.css">
     <link rel="stylesheet" href="../CssFiles/LoginSignin.css">
 </head>
-<body>
+<body id="body" onscroll="reload()" onload="isLogin()">
     <!--AddComment-->
     <!--AddComment2-->
     <!--Live Test-->
     <!--Navigaition Bar-->
-    <div id="nav">
-        <ul id="navBar">
-            <li class="nav-li"><a id="GetStart" href="#">Get Started</a></li>
-            <li id="signin" class="nav-li" onclick="ShowSignin()"><a href="#">Sign In</a></li>
-            <li class="nav-li visibility"><a href="#">Write</a></li>
-            <li class="nav-li visibility"><a href="#">Membership</a></li>
-            <li class="nav-li visibility"><a href="#">Story</a></li>
-            <li id="Logo"><img src="../Resources/Medium-logo-2020-symbol.png"></li>
-        </ul>
-    </div>
+    <nav>
+        <div id="nav">
+            <img id="Logo" src="../Resources/Untitled-2.png">
+            <ul id="navBar">
+                <li class="nav-li visibility"><a href="#"> Our Story</a></li>
+                <li class="nav-li visibility"><a href="#">Membership</a></li>
+                <li  onclick="WriteStory(this)" class="nav-li visibility"><a id="write" href="#">Write</a></li>
+                <li id="profile" class="nav-li"><img src="../Resources/User.png" alt="picProfile">
+                    <span class="tooltiptext">
+                        <div>Morteza</div>
+                        <a id="usernameTooltip" onclick="visitMyProfile()" href="../HtmlFiles/Profile.html">Profile</a>
+                        <button onclick="LogOut()">Logout</button>
+                    </span>
+                </li>
+                <li id="signin" class="nav-li" onclick="ShowSignin()"><a href="#">Sign In</a></li>
+                <li id="GetStratedli" onclick="WriteStory(this)" class="nav-li"><a id="GetStart" href="#">Get Started</a></li>
+            </ul>
+        </div>
+        <div id="navfake"></div>
+    </nav>
     <!--Header-->
     <header>
         <div id="header">
@@ -29,7 +39,7 @@
                 <p>Read and share ideas from independent voices, world-class
                      publications, and experts from around the globe. Everyone's welcome.
                     <a href="#">Learn more.</a></p>
-                <a id="GetStarted" href="#">Get Started</a>
+                <a id="GetStratedh" onclick="GetStarted(this)"  href="#">Get Started</a>
             </div>
             <div id="Content-Img">
                 
@@ -49,7 +59,7 @@
                         <div class="item1">01</div>
                         <div class="item2">
                             <img src="../Resources/0_shwkD2hQ6yumF9Om.png" class="PImg"></img>
-                            <div class="Titem2">James Surowiecki in Marker</div>
+                            <a onclick="visit(this)" href="#" class="Titem2">James Surowiecki in Marker</a>
                         </div>
                         <div class="item3">The GameStop Fiasco Proves We’re in a ‘Meme Stock’ Bubble</div>
                         <div class="item4">Jan 26 · 6 min read</div>
@@ -59,7 +69,7 @@
                         <div class="item1">02</div>
                         <div class="item2">
                             <img src="../Resources/1_3fQlbJuRmhdCsehLykpBHA.png" class="PImg"></img>
-                            <div class="Titem2">Angela Lashbrook</div>
+                            <a onclick="visit(this)" href="#" class="Titem2">Angela Lashbrook</a>
                         </div>
                         <div class="item3">What’s Wrong With The Honeywell Humidifier?</div>
                         <div class="item4">Jan 26 · 8 min read
@@ -70,7 +80,7 @@
                         <div class="item1">03</div>
                         <div class="item2">
                             <img src="../Resources/1_AFr0-PlJn8Zvd6uvbNDLSg.jpeg" class="PImg"></img>
-                            <div class="Titem2">Robert Roy Britt in Elemental</div>
+                            <a onclick="visit(this)" href="#" class="Titem2">Robert Roy Britt in Elemental</a>
                         </div>
                         <div class="item3">You Need to Upgrade Your Mask Now: Here’s How</div>
                         <div class="item4">Jan 26·7 min read</div>
@@ -80,7 +90,7 @@
                         <div class="item1">04</div>
                         <div class="item2">
                             <img src="../Resources/1_ia5vwyha1WLNfRB1yGhYfg.jpeg" class="PImg"></img>
-                            <div class="Titem2">Aaron Zamost</div>
+                            <a onclick="visit(this)" href="#" class="Titem2">Aaron Zamost</a>
                         </div>
                         <div class="item3">Why some reporters are harder to work with than others</div>
                         <div class="item4">Jan 26 · 6 min read</div>
@@ -90,7 +100,7 @@
                         <div class="item1">05</div>
                         <div class="item2">
                             <img src="../Resources/1_Ss_-sKAvXgW9gy9b_88NHw.png" class="PImg"></img>
-                            <div class="Titem2">umair haque in Eudaimonia and Co</div>
+                            <a onclick="visit(this)" href="#" class="Titem2">umair haque in Eudaimonia and Co</a>
                         </div>
                         <div class="item3">This is How You Recover From Fascism — and America’s Not Doing Any of It</div>
                         <div class="item4">Jan 27 · 8 min read</div>
@@ -100,7 +110,7 @@
                         <div class="item1">06</div>
                         <div class="item2">
                             <img src="../Resources/1_U8jdJEXKjPtH6hR0joEzbA.jpeg" class="PImg"></img>
-                            <div class="Titem2">Tommy Li in Coffee Meets Bagel Engineering</div>
+                            <a onclick="visit(this)" href="#" class="Titem2">Tommy Li in Coffee Meets Bagel Engineering</a>
                         </div>
                         <div class="item3">Our Journey to PostgreSQL 12</div>
                         <div class="item4">Jan 26 . 6 min read</div>
@@ -178,7 +188,7 @@
                             <div class="TC3">I’m a big fan of Microservices. Does it sound weird, given the title? Well, it should not.</div>
                             <div class="TC4">
                                 <p>Jan 19 . 6 min read</p>
-                                <img src="../Resources/icons8-bookmark-24.png" src="icon bookmark">
+                                <img src="../Resources/icons8-bookmark-24.png" alt="icon bookmark">
                             </div>
                         </div>
                         <div class="PC"><img src="../Resources/0_vm-MCaL0fcjQgLZ1.jpg "alt="pic"></div>
@@ -285,19 +295,34 @@
                 <div class="sidePart" onclick="HideForm()"> </div>
                 <div id="Form" >
                     <div id="div">
-                        <div id="wellcome">Wellcome back</div>
+                        <div id="wellcome">Wellcome back
+                            
+                        </div>
                         <form>
                             <input class="input" type="text" id="username" name="username" placeholder="Your Username ..." autofocus></br>
                             <div id="password"><input class="input" type="password" id="pass" name="pass" placeholder="Password ...">
                                 <a href="#" id="hideshow"><img id="imgHS" src="../Resources/icons8-eye-24.png" alt="Show Password" onclick="showhide()"></a>
                             </div></br>
+                            <div id="msg">
+                                <div>Username or password is incorrect</div>
+                                <img src="../Resources/icons8-box-important-100.png" alt="error">
+                            </div>
+                        </br>
                             <input type="submit" id="btnsubmit" value="Signin">
                         </form>
-                        <div id="Create"><div>No account?<a href="#">Create one</a></div></div>
+                        <div id="Create"><div>No account?<a id="CreateLogin" onclick="change(this)" href="#">Create one</a></div></div>
                     </div>
                 </div>
                 <div class="sidePart" onclick="HideForm()"></div>
             </div>
+
+
+            <!--Loading-->
+
+            <div id="divLoad">
+                <img id="loading" src="../Resources/circles-menu-1.gif" alt="pic">
+            </div>
 </body>
 <script src="../JsFiles/HomePage.js"></script>
+<script src="../JsFiles/User.js"></script>
 </html>
